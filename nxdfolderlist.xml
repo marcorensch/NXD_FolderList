@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="4" group="fields" method="upgrade">
+	<name>PLG_FIELDS_NXD_FOLDERLIST</name>
+	<creationDate>April 2024</creationDate>
+	<author>NXD | Marco Rensch</author>
+	<authorEmail>support@nx-designs.ch</authorEmail>
+	<authorUrl>https://www.nx-designs.ch</authorUrl>
+	<copyright>Copyright 2024 by NXD - nx-designs</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>2.0</version>
+	<description>PLG_FIELDS_NXD_FOLDERLIST_XML_DESCRIPTION</description>
+	<namespace path="src">NXD\Plugin\Fields\NXDFolderList</namespace>
+
+	<!-- Scripts to run on installation -->
+	<scriptfile>script.install.php</scriptfile>
+
+	<!-- Language files -->
+	<languages folder="language">
+		<language tag="en-GB">en-GB/plg_fields_nxdfolderlist.ini</language>
+		<language tag="en-GB">en-GB/plg_fields_nxdfolderlist.sys.ini</language>
+	</languages>
+
+	<!-- Plugin files -->
+	<files>
+		<folder>params</folder>
+		<folder plugin="nxdfolderlist">services</folder>
+		<folder>language</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<!-- Config parameter -->
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+						name="pagedisplay"
+						type="radio"
+						label="PLG_FIELDS_NXD_FOLDERLIST_SHOWONPAGE_LBL"
+						class="btn-group btn-group-yesno"
+						default="0"
+						filter="integer"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+
+	<!-- Update servers -->
+	<updateservers>
+		<server type="extension" priority="1" name="nxd_folderlist">https://update.nx-designs.ch/joomla/plugins/plg_nxd_folderlist.xml</server>
+	</updateservers>
+</extension>
