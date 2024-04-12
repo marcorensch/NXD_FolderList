@@ -33,7 +33,7 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic"
-					  addfieldprefix="NXD\Plugin\Fields\NXDFolderList\Administrator\Field"
+					  addfieldprefix="NXD\Plugin\Fields\NXDFolderList\Field"
 			>
 				<field name="root-folder" type="nxdfolderlist" label="PLG_FIELDS_NXD_FOLDERLIST_ROOT_FOLDER_LBL" description="PLG_FIELDS_NXD_FOLDERLIST_ROOT_FOLDER_DESC"/>
 				<field

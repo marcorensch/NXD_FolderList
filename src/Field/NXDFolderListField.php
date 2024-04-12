@@ -8,7 +8,7 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace NXD\Plugin\Fields\NXDFolderList\Administrator\Field;
+namespace NXD\Plugin\Fields\NXDFolderList\Field;
 
 use Joomla\CMS\Form\FormField;
 
