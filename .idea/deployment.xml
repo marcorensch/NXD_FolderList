@@ -6,14 +6,14 @@
       <paths name="Deployment">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$/../nxdfolderlist" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
       <paths name="Joomla4Local">
         <serverdata>
           <mappings>
-            <mapping deploy="/nxd_folderlist/" local="$PROJECT_DIR$/../nxdfolderlist" web="/" />
+            <mapping deploy="/nxdfolderlist/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

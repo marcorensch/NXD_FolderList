@@ -3,7 +3,7 @@
     <fields name="fieldparams">
         <!-- These are the fields that will be displayed when adding the field -->
         <fieldset name="fieldparams">
-            <field name="foo" type="text" default="42" label="Foo" description="Foo desc"/>
+            <field name="foo" type="text" default="48" label="Foobar" description="Foo desc"/>
             <field
                     name="pagedisplay"
                     type="radio"
