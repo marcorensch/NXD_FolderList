@@ -15,6 +15,7 @@ use Joomla\CMS\Form\Form;
 use Joomla\CMS\Form\FormHelper;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\Component\Fields\Administrator\Plugin\FieldsPlugin;
+use Joomla\Event\SubscriberInterface;
 use Joomla\Registry\Registry;
 use stdClass;
 
@@ -30,11 +31,6 @@ use stdClass;
 
 final class NXDFolderList extends FieldsPlugin
 {
-    public function __construct($subject, $config)
-    {
-        parent::__construct($subject, $config);
-        FormHelper::addFieldPath(JPATH_PLUGINS . '/' . $this->_type . '/' . $this->_name . '/src/Field');
-    }
 
     /**
      * Transforms the field into a DOM XML element and appends it as a child on the given parent.
@@ -49,16 +45,11 @@ final class NXDFolderList extends FieldsPlugin
      */
     public function onCustomFieldsPrepareDom($field, \DOMElement $parent, Form $form): false|\DOMElement|null
     {
-        echo '<pre>' . var_export($field, true) . '</pre>';
         $fieldNode = parent::onCustomFieldsPrepareDom($field, $parent, $form);
         if (!$fieldNode)
         {
             return false;
         }
-
-        $fieldNode->setAttribute('hide_default', true);
-        $fieldNode->setAttribute('hide_none', false);
-        $fieldNode->setAttribute('recursive', true);
 
         return $fieldNode;
     }
@@ -82,7 +73,6 @@ final class NXDFolderList extends FieldsPlugin
             $response->error = $e->getMessage();
         }
 
-        // @ToDo: Check if the parent folder is the root folder if enabled in settings
         $thisPlugin = PluginHelper::getPlugin('fields', 'nxdfolderlist');
         // Get plugin params
         $pluginParams = new Registry($thisPlugin->params);
