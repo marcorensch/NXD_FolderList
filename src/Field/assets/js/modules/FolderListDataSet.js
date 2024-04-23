@@ -47,11 +47,15 @@ class FolderListDataSet {
     }
 
     getRelativePathOfChild(childName) {
-        return this.children.filter(f => f.name === childName)[0].relativePath;
+        childName = childName.toString();
+        const filtered = this.children.filter(f => f.name === childName);
+        return filtered[0].relativePath;
     }
 
     getRealPathOfChild(childName) {
-        return this.children.filter(f => f.name === childName)[0].realPath;
+        childName = childName.toString();
+        const filtered = this.children.filter(f => f.name === childName);
+        return filtered[0].realPath;
     }
 
     /**

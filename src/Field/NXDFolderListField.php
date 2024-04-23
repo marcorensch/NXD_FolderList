@@ -23,7 +23,7 @@ defined('_JEXEC') or die;
 
 class NXDFolderListField extends FormField
 {
-    protected $type = 'nxdfolderlist';
+    protected $type = 'NXDFolderList';
 
     protected $assetsPath =  "plugins/fields/nxdfolderlist/src/Field/assets/";
 
