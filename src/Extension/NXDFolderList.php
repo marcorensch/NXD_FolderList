@@ -49,7 +49,6 @@ final class NXDFolderList extends FieldsPlugin
      */
     public function onCustomFieldsPrepareDom($field, \DOMElement $parent, Form $form): false|\DOMElement|null
     {
-        echo '<pre>' . var_export($field, true) . '</pre>';
         $fieldNode = parent::onCustomFieldsPrepareDom($field, $parent, $form);
         if (!$fieldNode)
         {
