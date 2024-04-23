@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<form>
+<form
+        addfieldprefix="NXD\Plugin\Fields\NXDFolderList\Field"
+>
     <fields name="fieldparams">
         <!-- These are the fields that will be displayed when adding the field -->
         <fieldset name="fieldparams">
-            <field name="foo" type="text" default="48" label="Foobar" description="Foo desc"/>
-            <field
-                    name="pagedisplay"
-                    type="radio"
-                    label="PLG_FIELDS_NXD_FOLDERLIST_SHOWONPAGE_LBL"
-                    class="btn-group btn-group-yesno"
-                    default="0"
-                    filter="integer"
-            >
-                <option value="0">JNO</option>
-                <option value="1">JYES</option>
-            </field>
+            <field name="path" type="nxdfolderlist" label="Path" readonly="true" description="Folder Path Description"/>
         </fieldset>
     </fields>
 </form>
