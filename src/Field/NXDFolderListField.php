@@ -29,11 +29,10 @@ class NXDFolderListField extends FormField
 
     public function setup(\SimpleXMLElement $element, $value, $group = null)
     {
-        $result = parent::setup($element, $value, $group);
-        return $result;
+        return parent::setup($element, $value, $group);
     }
 
-        /**
+    /**
      * Method to get the field input markup.
      *
      * @return  string  The field input markup.
@@ -59,7 +58,7 @@ class NXDFolderListField extends FormField
         echo HTMLHelper::_('bootstrap.renderModal', $modalId, $modalParams , $modalBody);
 
         $this->loadAssets();
-        $inputFieldHtml = '<input type="text" name="' . $this->name . '" id="' . $this->id . '" value="'.$this->value.'" class="form-control readonly nxd-folder-list-value-input" '.$readonlyString.' />';
+        $inputFieldHtml = '<input type="text" name="' . $this->name . '" id="' . $this->id . '" value="'.$this->value.'" class="form-control nxd-folder-list-value-input" '.$readonlyString.' />';
         $btnHtml = '<button data-bs-toggle="modal" data-bs-target="#' . $modalId . '" type="button" class="btn btn-primary nxd-folder-list-btn" data-input-field-id="' . $this->id . '">' . Text::_('PLG_FIELDS_NXD_FOLDERLIST_ROOT_FOLDER_SELECT_BTN_LBL') . '</button>';
         $inputGridHtml = '<div class="nxd-folder-list-container row" id="' . $this->id . '-container"><div class="col-12 col-md-8 col-xl-10">' . $inputFieldHtml . '</div><div class="col nxd-btn-container">' . $btnHtml . '</div></div>';
         return $inputGridHtml;
@@ -73,12 +72,11 @@ class NXDFolderListField extends FormField
     {
         $fullAssetsPath = Uri::root() . $this->assetsPath . 'js/nxd_folder_list_field.js';
         $app = Factory::getApplication();
-        $isFieldEditorContext = $app->input->get('option') === 'com_fields' && $app->input->get('view') === 'field' && $app->input->get('layout') === 'edit';
+        $isFieldPluginEdit = $app->input->get('option') === 'com_plugins' && $app->input->get('view') === 'field' && $app->input->get('layout') === 'edit';
         $definedRootFolder = "";
         $limitToParent = 0;
 
-        if ($isFieldEditorContext) {
-            // Get plugin 'relatedarticles' of type 'content'
+        if (!$isFieldPluginEdit) {
             $thisPlugin = PluginHelper::getPlugin('fields', 'nxdfolderlist');
             // Get plugin params
             $pluginParams = new Registry($thisPlugin->params);
