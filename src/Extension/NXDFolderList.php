@@ -12,10 +12,8 @@ namespace NXD\Plugin\Fields\NXDFolderList\Extension;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Form\Form;
-use Joomla\CMS\Form\FormHelper;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\Component\Fields\Administrator\Plugin\FieldsPlugin;
-use Joomla\Event\SubscriberInterface;
 use Joomla\Registry\Registry;
 use stdClass;
 
@@ -39,7 +37,7 @@ final class NXDFolderList extends FieldsPlugin
      * @param \DOMElement $parent The field node parent.
      * @param Form $form The form.
      *
-     * @return  \DOMElement | null The field node.
+     * @return  \DOMElement The field node.
      *
      * @since   3.7.0
      */
@@ -50,6 +48,9 @@ final class NXDFolderList extends FieldsPlugin
         {
             return false;
         }
+
+        $fieldNode->setAttribute('type', 'NXDFolderList');
+        $fieldNode->setAttribute('readonly',  'true');
 
         return $fieldNode;
     }

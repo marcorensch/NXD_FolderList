@@ -5,7 +5,7 @@
     <fields name="fieldparams">
         <!-- These are the fields that will be displayed when adding the field -->
         <fieldset name="fieldparams">
-            <field name="path" type="nxdfolderlist" label="Path" readonly="true" description="Folder Path Description"/>
+
         </fieldset>
     </fields>
 </form>
